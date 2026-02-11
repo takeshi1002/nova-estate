@@ -1151,3 +1151,16 @@ img {
 .sp-br {
     display: none;
 }
+/* メッセージセクションの視認性向上 */
+.message-section {
+    background-color: #001f3f; /* 深い濃紺で高級感を出す */
+    color: #ffffff;            /* 文字を完全な白にして、クッキリ見せる */
+    padding: 60px 20px;       /* 上下に余白を作り、圧迫感を消す */
+    text-align: center;       /* 中央揃えで「宣言」としての重みを出す */
+}
+
+.message-section h2 {
+    color: #d4af37;           /* メインのキャッチコピーだけゴールドに */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
