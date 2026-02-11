@@ -865,6 +865,13 @@ img {
    レスポンシブ対応 (Mobile)
    ========================================= */
 @media (max-width: 768px) {
+    body {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .pc-only { display: none; } /* スマホでは改行を無視する */
+
     .section {
         padding: 60px 0;
     }
@@ -889,6 +896,11 @@ img {
     .hero-title br {
         display: none;
     }
+
+    .hero-desc {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
     
     .about-grid {
         flex-direction: column;
@@ -898,6 +910,21 @@ img {
         font-size: 2rem;
         word-break: keep-all;
         overflow-wrap: break-word;
+    }
+
+    h2, h3 {
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        word-break: keep-all;
+        overflow-wrap: anywhere;
+        text-align: left; /* スマホでは左揃えの方が読みやすい */
+    }
+
+    .about-text p {
+        text-align: left;
     }
     
     .contact-form-wrapper {
