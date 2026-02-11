@@ -870,7 +870,8 @@ img {
         line-height: 1.7;
     }
 
-    .pc-only { display: none; } /* スマホでは改行を無視する */
+    .pc-only { display: none; }
+    .sp-only { display: block; }
 
     .section {
         padding: 60px 0;
@@ -999,4 +1000,9 @@ img {
         display: block;
         padding: 10px;
     }
+}
+
+/* スマホ専用改行クラス（PCでは非表示） */
+.sp-only {
+    display: none;
 }
