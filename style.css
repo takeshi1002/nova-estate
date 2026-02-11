@@ -871,7 +871,7 @@ img {
     }
 
     .pc-only { display: none; }
-    .sp-only { display: block; }
+    .sp-br { display: block; }
 
     .section {
         padding: 60px 0;
@@ -921,11 +921,11 @@ img {
     p {
         word-break: keep-all;
         overflow-wrap: anywhere;
-        text-align: left; /* スマホでは左揃えの方が読みやすい */
+        text-align: center;
     }
 
     .about-text p {
-        text-align: left;
+        text-align: center;
     }
     
     .contact-form-wrapper {
@@ -1003,6 +1003,6 @@ img {
 }
 
 /* スマホ専用改行クラス（PCでは非表示） */
-.sp-only {
+.sp-br {
     display: none;
 }
