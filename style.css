@@ -80,6 +80,10 @@ img {
     color: var(--color-gold);
 }
 
+.text-white {
+    color: var(--color-white) !important;
+}
+
 /* 見出しスタイル */
 .section-header {
     text-align: center;
@@ -499,56 +503,123 @@ img {
 }
 
 /* =========================================
-   Flow セクション
+   Gallery セクション (新規)
    ========================================= */
-.flow {
+.gallery {
     background-color: var(--color-white);
 }
 
-.flow-list {
-    max-width: 800px;
-    margin: 0 auto;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-.flow-item {
+.gallery-card {
+    background: var(--color-white);
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.gallery-card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.gallery-img-placeholder {
+    height: 200px;
+    background-color: #f1f5f9;
     display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: bold;
+    gap: 10px;
+}
+
+.gallery-img-placeholder i {
+    font-size: 2rem;
+}
+
+.gallery-info {
+    padding: 20px;
+}
+
+.gallery-info h4 {
+    font-family: var(--font-serif);
+    color: var(--color-navy);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.gallery-info p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* =========================================
+   Flow セクション (調査プロセス)
+   ========================================= */
+.flow {
+    background-color: var(--color-gray-bg);
+}
+
+.process-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.process-step {
+    flex: 1;
+    text-align: center;
+    background: var(--color-white);
+    padding: 30px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     position: relative;
 }
 
-/* 最後のアイテム以外に縦線を表示 */
-.flow-item:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    left: 25px;
-    top: 50px;
-    bottom: -40px;
-    width: 1px;
-    background-color: #cbd5e1;
-}
-
-.step-num {
-    width: 50px;
-    height: 50px;
+.process-icon {
+    width: 70px;
+    height: 70px;
     background-color: var(--color-navy);
     color: var(--color-gold);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    font-weight: bold;
-    flex-shrink: 0;
-    z-index: 1;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
 }
 
-.flow-content h3 {
+.process-step h3 {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--color-navy);
     margin-bottom: 10px;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 50px; /* アイコンの高さに合わせる */
+    color: var(--color-gold);
+    font-size: 1.5rem;
 }
 
 /* =========================================
@@ -556,6 +627,11 @@ img {
    ========================================= */
 .contact {
     background-color: var(--color-gray-bg);
+}
+
+.contact-dark {
+    background-color: var(--color-navy);
+    color: var(--color-white);
 }
 
 .contact-message-box {
@@ -664,17 +740,41 @@ img {
    ========================================= */
 .representative-section {
     padding: 60px 0;
-    background-color: #f8fafc;
+    background-color: var(--color-white);
 }
 
-.representative-card {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 80px 40px;
-    background-color: #f9f9f9;
-    border: none;
-    box-shadow: none;
+.rep-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background-color: #f8fafc;
+    padding: 50px;
+    border-radius: 4px;
+}
+
+.rep-image-area {
+    flex: 1;
+}
+
+.rep-img-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    font-weight: bold;
+    gap: 15px;
+}
+
+.rep-img-placeholder i {
+    font-size: 4rem;
+}
+
+.rep-text-area {
+    flex: 1.5;
 }
 
 .rep-title {
@@ -687,34 +787,61 @@ img {
 }
 
 .rep-name {
-    display: inline-block;
-    vertical-align: middle;
     font-family: var(--font-serif);
-    font-size: 1.6rem;
+    font-size: 2rem;
     color: var(--color-navy);
-    margin-bottom: 0;
-    margin-right: 15px;
+    margin-bottom: 15px;
     letter-spacing: 0.1em;
 }
 
-.rep-divider {
-    border: none;
-    border-top: 1px solid var(--color-gold);
-    width: 40px;
-    margin: 20px auto;
-    opacity: 0.6;
+.rep-badges {
+    margin-bottom: 20px;
 }
 
 .rep-badge {
     display: inline-block;
-    vertical-align: middle;
     font-size: 0.75rem;
     background-color: var(--color-gold);
     color: var(--color-white);
     padding: 4px 12px;
     border-radius: 2px;
-    margin: 2px;
+    margin-right: 5px;
     font-weight: 500;
+}
+
+.rep-message {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.rep-qa {
+    margin-top: 30px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.qa-item {
+    margin-bottom: 20px;
+}
+
+.qa-question {
+    font-weight: bold;
+    color: var(--color-navy);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qa-question i {
+    color: var(--color-gold);
+}
+
+.qa-answer {
+    font-size: 0.95rem;
+    padding-left: 26px;
+    color: #475569;
 }
 
 /* =========================================
@@ -999,6 +1126,24 @@ img {
     .footer-links a {
         display: block;
         padding: 10px;
+    }
+
+    /* 新しいFlowセクションのスマホ対応 */
+    .process-flow {
+        flex-direction: column;
+    }
+    .process-arrow {
+        transform: rotate(90deg);
+        padding: 20px 0;
+    }
+    
+    /* 新しいRepresentativeセクションのスマホ対応 */
+    .rep-container {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    .rep-img-placeholder {
+        height: 300px;
     }
 }
 
